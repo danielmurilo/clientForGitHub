@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search img {
+  margin-bottom: 8px;
+}
+
+#search-form {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.section2 {
+  color: gray;
+  border: 0.5px solid slategrey;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+.section2 img {
+  width: 150px;
+  border-radius: 5px;
+}
+.section3 {
+  width: 600px;
+  color: gray;
+  border: 0.5px solid slategrey;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}

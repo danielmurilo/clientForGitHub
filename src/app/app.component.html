@@ -1,0 +1,39 @@
+<main class="container">
+  <section class="search">
+    <img src="/assets/github.svg" alt="Github">
+    <form action="#" id="search-form" [formGroup]="githubForm" (ngSubmit)="procurar()">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input type="text" matInput placeholder="Ex: frogs123" formControlName="username">
+      </mat-form-field>
+      <button mat-flat-button color="accent" matTooltip="Procurar Usuário" [disabled]="githubForm.invalid">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+  </section>
+  <section class="section2" *ngIf="gUser != undefined">
+    <img [src]="gUser.avatar_url" alt="">
+    <h1>{{gUser.name || 'Nome Não Informado'}}</h1>
+    <h3>Login: {{gUser.login}}</h3>
+    <h3>E-mail: {{gUser.email || 'Não Informado'}}</h3>
+    <h3>Local: {{gUser.location || 'Não Informado'}}</h3>
+    <h3>Nº Repositórios: {{gUser.public_repos}}</h3>
+    <h3>Seguidores: {{gUser.followers}}</h3>
+    <h3>Seguindo: {{gUser.following}}</h3>
+  </section>  
+  <section class="section3" *ngIf="gUser != undefined">
+    <h1>Repositórios: </h1>
+    <mat-divider></mat-divider>
+    <div class="repo-container" *ngFor="let repo of gRepos; let i = index">
+      <div class="div-repo">
+        <h3>Nome Repositório: {{i+1}} - {{repo.name}}</h3>
+        <h3>Full Name: {{repo.full_name}}</h3>
+        <h3>url: <a [href]="repo.html_url" target="_blank" rel="noopener noreferrer">{{repo.html_url}}</a></h3>
+        <h3>Privado: {{repo.private}}</h3>
+        <h3>Fork: {{repo.fork}}</h3>
+        <h3>Linguagem: {{repo.language}}</h3>
+        <mat-divider></mat-divider>
+      </div>
+    </div>
+  </section>
+</main>
